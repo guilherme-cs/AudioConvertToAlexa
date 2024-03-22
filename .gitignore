@@ -1,0 +1,5 @@
+# Except this file
+!.gitignore
+*.mp3
+*.wav
+/node_modules/

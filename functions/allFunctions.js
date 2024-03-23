@@ -10,20 +10,20 @@ class Functions {
             '-ar', '24000',
             '-write_xing', '0'
         ];
-        return new Promise((resolve, reject) => {
+        // return new Promise((resolve, reject) => {
             ffmpeg()
                 .input(filePath)
                 .outputOptions(ffmpegArgs)
                 .output(outputPath)
                 .on('error', (err) => {
-                    reject({error: true, msg: err});
+                    // reject({error: true, msg: err});
                 })
                 .on('end', () => {
                     console.log(`"${outputPath}"`);
-                    resolve({error: false, filePath: outputPath});
+                    // resolve({error: false, filePath: outputPath});
                 })
                 .run();
-        });
+        // });
     }
 }
 

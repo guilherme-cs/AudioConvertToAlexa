@@ -16,7 +16,7 @@ if (acao == '-ql') {
     return console.log(`Quick Link: https://alexa-skills.amazon.com.br/apis/custom/skills/${args[1]}/launch`);
 }
 
-(async () => {
+// (async () => {
     fs.readdir(audiosFolder, (err, files) => {
         if (err) {
             return console.log('Falha ao escanear a pasta: ' + err);
@@ -28,10 +28,10 @@ if (acao == '-ql') {
                     if (file != '.gitkeep') {
                         let name = path.parse(file).name.replace(new RegExp(' ', 'g'), '').replace(new RegExp('ã', 'g'), 'a').replace(new RegExp('ç', 'g'), 'c');
                         console.log(name);
-                        Functions.convertFile(audiosFolder+file, './convertidos/'+name+'.mp3');
+                        await Functions.convertFile(audiosFolder+file, './convertidos/'+name+'.mp3');
                     }
                 });
             }
         }
     });
-})();
+// })();
